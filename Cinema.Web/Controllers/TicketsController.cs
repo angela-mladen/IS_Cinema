@@ -82,9 +82,6 @@ namespace Cinema.Web.Controllers
 
 
 
-        // POST: Tickets/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
-        // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult Create([Bind("Id,Title,Date,TicketPrice")] Ticket ticket)
@@ -113,9 +110,7 @@ namespace Cinema.Web.Controllers
             return View(ticket);
         }
 
-        // POST: Tickets/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
-        // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+       
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult Edit(Guid id, [Bind("Id,Title,Date,TicketPrice")] Ticket ticket)
@@ -181,7 +176,7 @@ namespace Cinema.Web.Controllers
         public SpecialCollectionClass FilterData(string FromDate, string ToDate)
         {
             SpecialCollectionClass result = new SpecialCollectionClass();
-            //get All type
+         
             result.TypeOptions = new SelectList(
                 this._ticketService.GetAllTickets()
                 //.GroupBy(c => c.Genre)
@@ -194,11 +189,6 @@ namespace Cinema.Web.Controllers
                 );
 
             var allTickets = this._ticketService.GetAllTickets(); ;
-
-
-            //if (!string.IsNullOrEmpty(SearchGenre) && SearchGenre != "All")
-            //    allTickets = allTickets.Where(c => c.Genre == SearchGenre).ToList();
-
 
             if (!string.IsNullOrEmpty(FromDate) && !string.IsNullOrEmpty(ToDate))
             {
