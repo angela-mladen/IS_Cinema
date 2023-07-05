@@ -31,9 +31,7 @@ namespace Cinema.Repository
                 .Property(z => z.Id)
                 .ValueGeneratedOnAdd();
 
-            //kompoziten kluc od dvata 
-            //builder.Entity<TicketInShoppingCart>()
-            //    .HasKey(z => new { z.TicketId, z.ShoppingCartId });
+            
 
             builder.Entity<TicketInShoppingCart>()
                 .HasOne(z => z.Ticket)
@@ -50,9 +48,7 @@ namespace Cinema.Repository
                 .HasForeignKey<ShoppingCart>(z => z.OwnerId);
 
 
-            //Order 
-            //builder.Entity<TicketInOrder>()
-            //    .HasKey(z => new { z.TicketId, z.OrderId });
+            
             builder.Entity<TicketInOrder>()
             .HasOne(z => z.SelectedTicket)
             .WithMany(z => z.Orders)
