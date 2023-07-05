@@ -1,37 +1,10 @@
-﻿/*
-using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace Cinema.Web.Controllers
-{
-    public class AccountController : Controller
-    {
-        public IActionResult Index()
-        {
-            return View();
-        }
-    }
-}
-*/
-
-//using Cinema.Domain.DomainModels.Identity;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System;
-//using System.Collections.Generic;
 using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
-//using Microsoft.AspNetCore.Mvc;
-//using System;
-//using System.Collections.Generic;
-//using System.Linq;
-//using System.Threading.Tasks;
-//using Cinema.Domain.DomainModels.Domain;
 using Cinema.Domain.Identity;
 using Cinema.Domain.DomainModels;
 using System.Collections.Generic;
