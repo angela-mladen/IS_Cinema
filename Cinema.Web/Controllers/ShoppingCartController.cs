@@ -1,8 +1,4 @@
-﻿
-//using Cinema.Web.Data;
-//using Cinema.Domain.DomainModels.Domain;
-//using Cinema.Domain.DomainModels.DTO;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -66,10 +62,6 @@ namespace Cinema.Web.Controllers
             return RedirectToAction("Index", "ShoppingCart");
         }
 
-        //public IActionResult PayOrder()
-        //{
-        //    return null;
-        //}
 
         public IActionResult DeleteTicketFromShoppingCart(Guid ticketId)
         {
@@ -93,18 +85,7 @@ namespace Cinema.Web.Controllers
             var result = this._shoppingCartService.orderNow(userId);
 
             return result;
-            //var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-
-            //var result = this._shoppingCartService.orderNow(userId);
-
-            //if(result)
-            //{
-            //    return RedirectToAction("Index", "ShoppingCart");
-            //}
-            //else
-            //{
-            //    return RedirectToAction("Index", "ShoppingCart");
-            //}
+            
         }
     }
 }
